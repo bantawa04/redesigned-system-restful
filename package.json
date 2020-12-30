@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Placeholder api for graphql",
   "main": "index.js",
+  "engines": {
+    "node": "12.18.2"
+  },
   "scripts": {
     "start": "nodemon app.js",
     "test": "mocha --exit"
