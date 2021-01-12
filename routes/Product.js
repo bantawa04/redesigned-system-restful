@@ -15,7 +15,6 @@ router.post(
       .withMessage("Title must be at least 5 chars long"),
     body("price")
       .notEmpty()
-      .escape()
       .isNumeric(),
     body("description")
       .notEmpty()
@@ -36,8 +35,6 @@ router.put(
       .withMessage("Title must be at least 5 chars long"),
     body("price")
       .notEmpty()
-      .escape()
-      .isLength({ min: 5 })
       .isNumeric(),
     body("description")
       .notEmpty()
