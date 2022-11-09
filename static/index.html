@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restful json</title>
+</head>
+
+<body>
+    <center>
+    <h1 id="posts">Posts</h1>
+    <h2 id="get-all-post">Get all post</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/post"</span>)
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(response)</span> =&gt;</span>  response.json())
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(data)</span> =&gt;</span>  <span class="hljs-built_in">console</span>.log(data));
+</code></pre>
+    <blockquote>
+        <p>Returns 200 posts</p>
+    </blockquote>
+    <h2 id="get-fixed-no-post">Get fixed no. post</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/post?n=10"</span>)
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(response)</span> =&gt;</span>  response.json())
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(data)</span> =&gt;</span>  <span class="hljs-built_in">console</span>.log(data));
+</code></pre>
+    <h2 id="get-single-post">Get single post</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/post/7"</span>)
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(response)</span> =&gt;</span> response.json())
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(data)</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(data));
+</code></pre>
+    <h2 id="create-post">Create Post</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/post"</span>,{
+    method:  <span class="hljs-string">"<span class="hljs-keyword">POST</span>"</span>,
+    headers: {
+    Accept:  <span class="hljs-string">"application/json"</span>,
+    <span class="hljs-string">"Content-Type"</span>:  <span class="hljs-string">"application/json"</span>,
+    },
+    body:  JSON.stringify({ 
+        title:  <span class="hljs-string">"Post title"</span>, 
+        content:  <span class="hljs-string">"Post content"</span> 
+    }),
+})
+.then((response) =&gt;  response.json())
+.then((json) =&gt;  console.log(json));
+</code></pre>
+    <h2 id="delete-post">Delete Post</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/post/5"</span>,{
+    method:  <span class="hljs-string">"<span class="hljs-keyword">DELETE</span>"</span>,
+    headers: {
+    Accept:  <span class="hljs-string">"application/json"</span>,
+    <span class="hljs-string">"Content-Type"</span>:  <span class="hljs-string">"application/json"</span>,
+    },
+})
+.then((response) =&gt;  response.json())
+.then((json) =&gt;  console.log(json));
+</code></pre>
+    <h2 id="update-post">Update Post</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/post/66"</span>,{
+    method:  <span class="hljs-string">"<span class="hljs-keyword">PUT</span>"</span>,
+    headers: {
+    Accept:  <span class="hljs-string">"application/json"</span>,
+    <span class="hljs-string">"Content-Type"</span>:  <span class="hljs-string">"application/json"</span>,
+    },
+    body:  JSON.stringify({
+        title:  <span class="hljs-string">"Post title"</span>,
+        content:  <span class="hljs-string">"Post content"</span>,
+    }),
+})
+.then((response) =&gt;  response.json())
+.then((json) =&gt;  console.log(json));
+</code></pre>
+    <h1 id="products">Products</h1>
+    <h2 id="get-all-products">Get all products</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/product"</span>)
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(response)</span> =&gt;</span>  response.json())
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(data)</span> =&gt;</span>  <span class="hljs-built_in">console</span>.log(data));
+</code></pre>
+    <blockquote>
+        <p>Returns 200 products</p>
+    </blockquote>
+    <h2 id="get-fixed-no-product">Get fixed no. product</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/post?n=10"</span>)
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(response)</span> =&gt;</span>  response.json())
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(data)</span> =&gt;</span>  <span class="hljs-built_in">console</span>.log(data));
+</code></pre>
+    <h2 id="get-single-product">Get single product</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/product/7"</span>)
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(response)</span> =&gt;</span> response.json())
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(data)</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(data));
+</code></pre>
+    <h2 id="create-product">Create product</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/product"</span>, {
+method:  <span class="hljs-string">"<span class="hljs-keyword">POST</span>"</span>,
+headers: {
+    Accept:  <span class="hljs-string">"application/json"</span>,
+    <span class="hljs-string">"Content-Type"</span>:  <span class="hljs-string">"application/json"</span>,
+},
+body:  JSON.stringify({
+        title:  <span class="hljs-string">"Product Title"</span>,
+        price:  <span class="hljs-number">1299</span>,
+        description:  <span class="hljs-string">"Post content"</span>,
+    }),
+})
+.then((response) =&gt;  response.json())
+.then((json) =&gt;  console.log(json));
+</code></pre>
+    <h2 id="delete-product">Delete product</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/product/5"</span>, {
+method:  <span class="hljs-string">"<span class="hljs-keyword">DELETE</span>"</span>,
+headers: {
+    Accept:  <span class="hljs-string">"application/json"</span>,
+    <span class="hljs-string">"Content-Type"</span>:  <span class="hljs-string">"application/json"</span>,
+    }
+})
+.then((response) =&gt;  response.json())
+.then((json) =&gt;  console.log(json));
+</code></pre>
+    <h2 id="update-product">Update product</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/product/66"</span>, {
+    method:  <span class="hljs-string">"<span class="hljs-keyword">PUT</span>"</span>,
+    headers: {
+    Accept:  <span class="hljs-string">"application/json"</span>,
+        <span class="hljs-string">"Content-Type"</span>:  <span class="hljs-string">"application/json"</span>,
+    },
+        body:  JSON.stringify({
+        title:  <span class="hljs-string">"Update product title"</span>,
+        price:  <span class="hljs-string">"1099"</span>,
+        description:  <span class="hljs-string">"Update product description"</span>,
+    }),
+})
+.then((response) =&gt;  response.json())
+.then((json) =&gt;  console.log(json));
+</code></pre>
+    <h1 id="todos">Todos</h1>
+    <h2 id="get-all-todos">Get all todos</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/todo"</span>)
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(response)</span> =&gt;</span>  response.json())
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(data)</span> =&gt;</span>  <span class="hljs-built_in">console</span>.log(data));
+</code></pre>
+    <blockquote>
+        <p>Returns 200 todos</p>
+    </blockquote>
+    <h2 id="get-fixed-no-todos">Get fixed no. todos</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/todo?n=10"</span>)
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(response)</span> =&gt;</span>  response.json())
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(data)</span> =&gt;</span>  <span class="hljs-built_in">console</span>.log(data.todos));
+</code></pre>
+    <h2 id="get-single-todo">Get single Todo</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/todo/16"</span>)
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(response)</span> =&gt;</span>  response.json())
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(data)</span> =&gt;</span>  <span class="hljs-built_in">console</span>.log(data));
+</code></pre>
+    <h2 id="create-todo">Create todo</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/todo"</span>,{
+    method:  <span class="hljs-string">"<span class="hljs-keyword">POST</span>"</span>,
+    headers: {
+    Accept:  <span class="hljs-string">"application/json"</span>,
+    <span class="hljs-string">"Content-Type"</span>:  <span class="hljs-string">"application/json"</span>,
+    },
+    body:  JSON.stringify({ 
+        title:  <span class="hljs-string">"New task to do"</span>, 
+        status:  false
+    }),
+})
+.then((response) =&gt;  response.json())
+.then((json) =&gt;  console.log(json));
+</code></pre>
+    <h2 id="delete-todo">Delete Todo</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/todo/15"</span>,{
+    method:  <span class="hljs-string">"<span class="hljs-keyword">DELETE</span>"</span>,
+    headers: {
+    Accept:  <span class="hljs-string">"application/json"</span>,
+    <span class="hljs-string">"Content-Type"</span>:  <span class="hljs-string">"application/json"</span>,
+    },
+})
+.then((response) =&gt;  response.json())
+.then((json) =&gt;  console.log(json));
+</code></pre>
+    <h2 id="update-todo">Update Todo</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/todo/34"</span>,{
+    method:  <span class="hljs-string">"<span class="hljs-keyword">PUT</span>"</span>,
+    headers: {
+    Accept:  <span class="hljs-string">"application/json"</span>,
+    <span class="hljs-string">"Content-Type"</span>:  <span class="hljs-string">"application/json"</span>,
+    },
+    body:  JSON.stringify({
+        title:  <span class="hljs-string">"Post title"</span>,
+        status:  true
+    }),
+})
+.then((response) =&gt;  response.json())
+.then((json) =&gt;  console.log(json));
+</code></pre>
+    <h1 id="users">Users</h1>
+    <h2 id="get-all-users">Get all Users</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/user"</span>)
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(response)</span> =&gt;</span>  response.json())
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(data)</span> =&gt;</span>  <span class="hljs-built_in">console</span>.log(data));
+</code></pre>
+    <blockquote>
+        <p>Returns 200 users</p>
+    </blockquote>
+    <h2 id="get-fixed-no-todos">Get fixed no. todos</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/user?n=10"</span>)
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(response)</span> =&gt;</span>  response.json())
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(data)</span> =&gt;</span>  <span class="hljs-built_in">console</span>.log(data.todos));
+</code></pre>
+    <h2 id="get-single-user">Get single user</h2>
+    <pre><code>fetch(<span class="hljs-string">"https://json-restful-endpoint.herokuapp.com/user/22"</span>)
+
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(response)</span> =&gt;</span>  response.json())
+
+.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">(data)</span> =&gt;</span>  <span class="hljs-built_in">console</span>.log(data));
+</code></pre>
+</center>
+</body>
+
+</html>
