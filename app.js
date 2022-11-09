@@ -23,6 +23,8 @@ app.use(helmet());
 app.use(compression());
 app.use(bodyParser.json());
 
+app.use(express.static('static'));
+app.use('/', express.static('index.html'));
 //Implement Routes
 app.use("/post", postRoutes);
 
